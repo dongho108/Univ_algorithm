@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <vector>
-#include <cmath>
+#include <fstream>
 
 using namespace std;
 int r=0;
@@ -22,20 +22,31 @@ void searchMax(vector< vector<int> > level, int max, int a){
     }
     searchMax(level, max, a+1);
 }
+//int main(){
+//    ifstream in("/Users/dongho/Documents/3-1/algorithm/hw_1/hw_1/test.txt");
+//    int a, b, c;
+//    in >> a >> b >> c;
+//    cout << a << b << c <<endl;
+//
+//}
 
 int main(){
+//    ifstream in("./input.txt");
     int N;
     cin >> N;
+//    in >> N;
     vector <int> result;
     for(int LN=0; LN<N; LN++){
         vector <vector<int> > level;
         int num;
         cin >> num;
-        
+//        in >> num;
+
         level.push_back(vector<int>());
         int data, lc, rc;
         cin >> data >> lc >> rc;
-        
+//        in >> data >> lc >> rc;
+
         level.push_back(vector<int>());
         level[1].push_back(data);
         level.push_back(vector<int>());
@@ -46,6 +57,7 @@ int main(){
         int lev;
         for(int k=1; k<num; k++){
             cin >> data >> lc >> rc;
+//            in >> data >> lc >> rc;
             //data의 레벨찾기
             bool endflag=0;
             for(int i=1; i<level.size(); i++){
